@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { filter, contains } from 'ramda';
 import logo from './fullOrange.png';
 import './App.css';
 import Card from './components/Card'
@@ -24,14 +25,17 @@ class App extends Component {
     return body;
   };
 
-  createData = () => {
-    const { response } = this.state;
-    let listArr = response ? response.slice(0, 10) : [];
-    let data = [];
-    console.log(listArr);
 
-    data = listArr.map(i => (
-      <Card
+
+  createData = () => {
+    const { response, post } = this.state;
+    let data = [];
+    const filteredArr = response ? response.filter(d => d.name.first.includes(post)).slice(0, 10) : [];
+
+    console.log(filteredArr);
+
+    data = filteredArr.map((i, k) => (
+      <Card key={k}
         className='card'
         name={i.name}
         phone={i.phone}
@@ -73,7 +77,7 @@ render() {
             value={this.state.post}
             onChange={e => this.setState({ post: e.target.value })}
           />
-          <button type="submit">Submit</button>
+          {/* <button type="submit">Submit</button> */}
         </form>
         <p>{this.state.responseToPost}</p>
         {

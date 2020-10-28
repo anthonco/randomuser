@@ -9,7 +9,8 @@
   "dependencies": {
     "axios": "^0.21.0",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "ramda": "^0.27.1"
   },
   "devDependencies": {
     "concurrently": "^4.0.1"

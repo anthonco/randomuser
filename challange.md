@@ -25,25 +25,16 @@ Using the random user API (https://randomuser.me/documentation) – create a Rea
 - Nicely styled.
 
 
-## App Creation
+### Running the app in dev
 
-Success! Created randomuser at D:\Projects\AbsenceSoftCodeChallange\randomuser
-Inside that directory, you can run several commands:
+- From the root directory run `yarn dev`
+- To terminate `ctrl+C`
 
-  yarn start
-    Starts the development server.
+- If you wish to run the API server itself, from within the root directory run `node server.js`
 
-  yarn build
-    Bundles the app into static files for production.
+### Yarn
 
-  yarn test
-    Starts the test runner.
-
-  yarn eject
-    Removes this tool and copies build dependencies, configuration files
-    and scripts into the app directory. If you do this, you can’t go back!
-
-We suggest that you begin by typing:
-
-  cd randomuser
-  yarn start
+- `yarn start` Starts the development server.
+- `yarn build` Bundles the app into static files for production.
+- `yarn test` Starts the test runner.
+- `yarn eject` Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!

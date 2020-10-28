@@ -13,8 +13,10 @@ app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express' });
 });
 
+
+
 app.get('/fetchData', (req, res) => {
-  axios.get('https://randomuser.me/api/?results=100')
+  axios.get('https://randomuser.me/api/?results=100&seed=hello')
     .then(response => {
       res.send({ data: response.data.results });
     });
