@@ -10,6 +10,7 @@ Using the random user API (https://randomuser.me/documentation) – create a Rea
 - Random user API should return 100 results stored in the app
 - Main component should be a search bar.
 - When user types 3 characters or more it will display 10 filtered results below search
+- Search allows for searching by email and last name
 - User results should display:
 - User thumbnail
 - First name
