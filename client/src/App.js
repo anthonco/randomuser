@@ -7,8 +7,7 @@ import Card from './components/Card'
 class App extends Component {
   state = {
     response: '',
-    post: '',
-    responseToPost: '',
+    search: '',
   };
   
   componentDidMount() {
@@ -17,6 +16,7 @@ class App extends Component {
       .catch(err => console.log(err));
   }
   
+  // Call stubbed out API with the fetchData route to return a set of results.
   callApi = async () => {
     const response = await fetch('/fetchData');
     const body = await response.json();
@@ -25,41 +25,27 @@ class App extends Component {
     return body;
   };
 
-
-
   createData = () => {
-    const { response, post } = this.state;
+    const { response, search } = this.state;
     let data = [];
-    const filteredArr = response ? response.filter(d => d.name.first.includes(post)).slice(0, 10) : [];
+    let filteredArr = response ? response.filter(d => d.name.first.includes(search)): [];
+    filteredArr = filteredArr.concat(response.filter(d => d.name.last.includes(search))).slice(0, 10);
 
-    console.log(filteredArr);
-
-    data = filteredArr.map((i, k) => (
-      <Card key={k}
-        className='card'
-        name={i.name}
-        phone={i.phone}
-        picture={i.picture.thumbnail}
-      />
-    ));
+    if (search.length > 2 && filteredArr.length) {
+      data = filteredArr.map((i, k) => (
+        <Card key={k}
+          className='card'
+          name={i.name}
+          phone={i.phone}
+          picture={i.picture.thumbnail}
+        />
+      ));
+    } else {
+      data = <h2>No results were found.</h2>
+    }
 
     return data;
-
   }
-  
-  handleSubmit = async e => {
-    e.preventDefault();
-    const response = await fetch('/api/world', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ post: this.state.post }),
-    });
-    const body = await response.text();
-    
-    this.setState({ responseToPost: body });
-  };
   
 render() {
     const { response } = this.state;
@@ -74,14 +60,12 @@ render() {
           </p>
           <input
             type="text"
-            value={this.state.post}
-            onChange={e => this.setState({ post: e.target.value })}
+            value={this.state.search}
+            onChange={e => this.setState({ search: e.target.value })}
           />
-          {/* <button type="submit">Submit</button> */}
         </form>
-        <p>{this.state.responseToPost}</p>
         {
-          response ? this.createData() : <p>No results were found.</p>
+          response ? this.createData() : <p>Fetching data.</p>
         }
         <footer className="App-footer">AbsenceSoft Code Challange - 10/27/2020 - Created By Corey Anthony</footer>
       </div>
