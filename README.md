@@ -15,6 +15,12 @@ See requirements in challange.md
 - Sort Alphabetically
 - Create container component with up/down pagination to retrieve the next/previous set of 10 records.
 
+### Test Search Terms
+`Khl`  
+`ais`
+`Her`
+`exa`
+
 ### Running the app in dev
 
 - From the root directory run `yarn dev`
@@ -28,3 +34,9 @@ See requirements in challange.md
 - `yarn build` Bundles the app into static files for production.
 - `yarn test` Starts the test runner.
 - `yarn eject` Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!
+
+### Heroku deployment
+- App name `cna-randomuser`
+- Pipeline name `prod`
+
+- https://cna-randomuser.herokuapp.com/

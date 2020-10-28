@@ -28,8 +28,8 @@ class App extends Component {
   createData = () => {
     const { response, search } = this.state;
     let data = [];
-    let filteredArr = response ? response.filter(d => d.name.first.includes(search)): [];
-    filteredArr = filteredArr.concat(response.filter(d => d.name.last.includes(search))).slice(0, 10);
+    let filteredArr = response ? response.filter(d => d.name.last.includes(search)): [];
+    filteredArr = filteredArr.concat(response.filter(d => d.email.includes(search))).slice(0, 10);
 
     if (search.length > 2 && filteredArr.length) {
       data = filteredArr.map((i, k) => (
