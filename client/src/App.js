@@ -67,7 +67,7 @@ render() {
         {
           response ? this.createData() : <p>Fetching data.</p>
         }
-        <footer className="App-footer">AbsenceSoft Code Challange - 10/27/2020 - Created By Corey Anthony</footer>
+        <footer className="App-footer">AbsenceSoft Code Challenge - 10/27/2020 - Corey Anthony</footer>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-# AbsenceSoft Code Challange "randomuser"
+# AbsenceSoft Code Challenge "randomuser"
 
 10/27/2020
 Corey Anthony

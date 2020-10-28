@@ -1,4 +1,4 @@
-# AbsenceSoft Code Challange
+# AbsenceSoft Code Challenge
 
 10/27/2020
 
